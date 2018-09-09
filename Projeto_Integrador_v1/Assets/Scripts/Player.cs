@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
         anima.SetBool("isGrounded", isGrounded);
 
         //Verifica se o personagem está recebendo dano
-        if (isDamaged == true)
+        if (isDamaged)
         {
             anima.SetFloat("hor", 0);
             anima.SetFloat("ver", 0);

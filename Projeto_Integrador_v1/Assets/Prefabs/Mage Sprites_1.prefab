@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4211290486969296}
   - component: {fileID: 61110466678601436}
   - component: {fileID: 50741389439238080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitboxes3
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4851302278236000}
   - component: {fileID: 61724573808082724}
   - component: {fileID: 50077568143735830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitboxes2
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4674911122825244}
   - component: {fileID: 212667268102498534}
   - component: {fileID: 95606795377357858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lightning_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114730872372401376}
   - component: {fileID: 50924726390066046}
   - component: {fileID: 61261460976431256}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mage Sprites_1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4209245254419364}
   - component: {fileID: 61666059831627126}
   - component: {fileID: 50753916122770328}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitbox_run
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4580660587128246}
   - component: {fileID: 61427596572545220}
   - component: {fileID: 50541109070580964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitboxes
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1709092895723334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.42, y: -2.47, z: 0}
+  m_LocalPosition: {x: -2.26, y: -4.05, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4580660587128246}

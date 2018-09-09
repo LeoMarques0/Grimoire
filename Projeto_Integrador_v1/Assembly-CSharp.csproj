@@ -64,27 +64,29 @@
     <Compile Include="Assets\Scripts\Batty.cs" />
     <Compile Include="Assets\Scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
+    <Compile Include="Assets\Scripts\DarkFollower.cs" />
     <Compile Include="Assets\Scripts\EvilFireball.cs" />
     <Compile Include="Assets\Scripts\EvilThunder.cs" />
     <Compile Include="Assets\Scripts\Fireball.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Spinning_Spark.cs" />
     <Reference Include="Cinemachine">
-      <HintPath>C:/Users/User/Desktop/Projeto_Integrador_v1/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Grimoire/Projeto_Integrador_v1/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/User/Desktop/Projeto_Integrador_v1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Grimoire/Projeto_Integrador_v1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/User/Desktop/Projeto_Integrador_v1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Grimoire/Projeto_Integrador_v1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/User/Desktop/Projeto_Integrador_v1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Grimoire/Projeto_Integrador_v1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>C:/Users/User/Desktop/Projeto_Integrador_v1/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Grimoire/Projeto_Integrador_v1/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/User/Desktop/Projeto_Integrador_v1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Grimoire/Projeto_Integrador_v1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

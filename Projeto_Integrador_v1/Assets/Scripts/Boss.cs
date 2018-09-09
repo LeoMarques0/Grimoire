@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour {
 
     public GameObject evilFireball;
     public GameObject evilThunder;
+    public GameObject evilSpark;
 
 
     GameObject evilMage;
@@ -34,11 +35,15 @@ public class Boss : MonoBehaviour {
             evilBox.size = new Vector3(0, 0, 0);
         if (Input.GetKeyDown(KeyCode.J))
         {
-            StartCoroutine(Attack1());
+            StartCoroutine("Attack1");
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            StartCoroutine(Attack2());
+            StartCoroutine("Attack2");
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            StartCoroutine("Attack3");
         }
     }
 
@@ -140,6 +145,25 @@ public class Boss : MonoBehaviour {
 
 
         }
+        yield return null;
+    }
+
+    IEnumerator Attack3()
+    {
+        teleport.Play("Teleport");
+        yield return new WaitForSeconds(0.3f);
+        animaBoss.Play("Boss_idle");
+        transform.position = new Vector2(0, 0);
+        teleport.Play("Backteleport");
+        yield return new WaitForSeconds(0.3f);
+        teleport.Play("noteleport");
+
+        evilImage.sortingOrder = -5;
+        animaBoss.Play("Boss_attack_3");
+        yield return new WaitForSeconds(0.6f);
+        Instantiate(evilSpark, new Vector3(0, 0.15f), Quaternion.identity, transform);
+        yield return new WaitForSeconds(6.5f);
+        animaBoss.Play("Boss_idle");
         yield return null;
     }
 
