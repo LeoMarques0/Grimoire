@@ -8,7 +8,7 @@ public class DarkFollower : MonoBehaviour {
 
     GameObject player;
     float spd;
-    int walk = 1;
+    int walk = 1, side = 0;
     bool range = false, isWalking = false, isAttack = false;
     public LayerMask mask;
     Animator anima;
@@ -47,9 +47,11 @@ public class DarkFollower : MonoBehaviour {
         {
             spd = 1;
             transform.localScale = new Vector3(-1, 1, 1);
+            side = 0;
             yield return new WaitForSeconds(3);
             spd = -1;
             transform.localScale = new Vector3(1, 1, 1);
+            side = 180;
             yield return new WaitForSeconds(3);
         }
         yield return null;
@@ -57,9 +59,15 @@ public class DarkFollower : MonoBehaviour {
 
     IEnumerator Attack()
     {
+        spd = 0;
+        yield return new WaitForSeconds(1f);
         isAttack = true;
-        anima.Play("Dark Follower_Attack");
-        Instantiate(fireball, new Vector2(transform.position.x + 0.1f, transform.position.y + 0.1f), Quaternion.identity);
+        for(int i = 0; i < 3; i++)
+        {
+            anima.Play("Dark Follower_Attack");
+            Instantiate(fireball, new Vector2(transform.position.x + 0.1f, transform.position.y + 1f), Quaternion.Euler(Vector3.up * side));
+            yield return new WaitForSeconds(0.3f);
+        }
         yield return null;
     }
 

@@ -113,7 +113,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798547976274956}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -238,6 +238,7 @@ MonoBehaviour:
     type: 2}
   evilThunder: {fileID: 1106978188571338, guid: 5bf01d83c51f6f147900f227d3ad5342,
     type: 2}
+  evilSpark: {fileID: 1116523206484534, guid: cb1e2ff973bc547449dbe5c170860c27, type: 2}
 --- !u!212 &212102886488962616
 SpriteRenderer:
   m_ObjectHideFlags: 1

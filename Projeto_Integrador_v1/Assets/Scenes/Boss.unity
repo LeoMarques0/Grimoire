@@ -499,30 +499,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 212102886488962616, guid: 4c5d569169c32bc47b94e1bd0194f5e4,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300006, guid: 3de9abdaea66c674b8745eb22c2a6720,
-        type: 3}
-    - target: {fileID: 4142632175848000, guid: 4c5d569169c32bc47b94e1bd0194f5e4, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142632175848000, guid: 4c5d569169c32bc47b94e1bd0194f5e4, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142632175848000, guid: 4c5d569169c32bc47b94e1bd0194f5e4, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114783624177494790, guid: 4c5d569169c32bc47b94e1bd0194f5e4,
-        type: 2}
-      propertyPath: evilSpark
-      value: 
-      objectReference: {fileID: 1116523206484534, guid: cb1e2ff973bc547449dbe5c170860c27,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c5d569169c32bc47b94e1bd0194f5e4, type: 2}
   m_IsPrefabAsset: 0
