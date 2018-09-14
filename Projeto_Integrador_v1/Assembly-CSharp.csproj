@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AttackAtribute.cs" />
     <Compile Include="Assets\Scripts\Batty.cs" />
     <Compile Include="Assets\Scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\Scripts\EvilFireball.cs" />
     <Compile Include="Assets\Scripts\EvilThunder.cs" />
     <Compile Include="Assets\Scripts\Fireball.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Spinning_Spark.cs" />
     <Reference Include="Cinemachine">

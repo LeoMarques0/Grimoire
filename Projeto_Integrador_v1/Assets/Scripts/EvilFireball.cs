@@ -26,7 +26,7 @@ public class EvilFireball : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag != "Boss" && col.tag != "Enemy" && col.tag != "EvilAttack")
+        if (col.tag != "Boss" && col.tag != "Enemy" && col.tag != "EvilAttack" && col.tag != "Attack")
         {
             Destroy(gameObject);
         }

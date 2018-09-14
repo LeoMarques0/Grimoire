@@ -13,14 +13,17 @@ public class Player : MonoBehaviour {
     public GameObject dust;
     public GameObject fireball;
     public LayerMask mask;
+    public AudioClip[] sounds;
     public int vida = 20;
     bool isGrounded = true, isDamaged = false;
+    AudioSource audiosource;
     public Image life;
 
 
 	// Use this for initialization
 	void Start () {
         anima = GetComponent<Animator>();
+        audiosource = GetComponent<AudioSource>();
         lightningSword = thunderSword.GetComponent<Animator>();
 	}
 	
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour {
                 IsFireball();
             else if (Input.GetKeyDown(KeyCode.X))
             {
+                audiosource.clip = sounds[0];
                 if (anima.GetFloat("hor") != 0 && isGrounded == true)
                 {
                     thunderSword.SetActive(true);
@@ -59,6 +63,8 @@ public class Player : MonoBehaviour {
                 anima.SetBool("isLightning", true);
                 StopCoroutine("IsLightning");
                 StartCoroutine("IsLightning");
+                if (anima.GetBool("isLightning"))
+                    audiosource.Play();
             }
             else if ((Input.GetKeyDown(KeyCode.C) && isGrounded == true) || isGrounded == false)
                 IsJumping();

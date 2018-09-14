@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4211290486969296}
   - component: {fileID: 61110466678601436}
   - component: {fileID: 50741389439238080}
+  - component: {fileID: 114545240617293198}
   m_Layer: 9
   m_Name: Hitboxes3
   m_TagString: Attack
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4851302278236000}
   - component: {fileID: 61724573808082724}
   - component: {fileID: 50077568143735830}
+  - component: {fileID: 114524007564468606}
   m_Layer: 9
   m_Name: Hitboxes2
   m_TagString: Attack
@@ -75,6 +77,7 @@ GameObject:
   - component: {fileID: 114730872372401376}
   - component: {fileID: 50924726390066046}
   - component: {fileID: 61261460976431256}
+  - component: {fileID: 82711877249145228}
   m_Layer: 9
   m_Name: Mage Sprites_1
   m_TagString: Player
@@ -92,6 +95,7 @@ GameObject:
   - component: {fileID: 4209245254419364}
   - component: {fileID: 61666059831627126}
   - component: {fileID: 50753916122770328}
+  - component: {fileID: 114992414379981854}
   m_Layer: 9
   m_Name: Hitbox_run
   m_TagString: Attack
@@ -109,6 +113,7 @@ GameObject:
   - component: {fileID: 4580660587128246}
   - component: {fileID: 61427596572545220}
   - component: {fileID: 50541109070580964}
+  - component: {fileID: 114247812786941524}
   m_Layer: 9
   m_Name: Hitboxes
   m_TagString: Attack
@@ -176,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1709092895723334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.42, y: -2.47, z: 0}
+  m_LocalPosition: {x: -2.26, y: -4.05, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4580660587128246}
@@ -424,6 +429,101 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.4}
   m_EdgeRadius: 0
+--- !u!82 &82711877249145228
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709092895723334}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95572388412363770
 Animator:
   serializedVersion: 3
@@ -460,6 +560,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114247812786941524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991003959526458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662121d9b74dc594a979af59ad157928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 2
+--- !u!114 &114524007564468606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1286308883535296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662121d9b74dc594a979af59ad157928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 2
+--- !u!114 &114545240617293198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196005915108674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662121d9b74dc594a979af59ad157928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 3
 --- !u!114 &114730872372401376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -483,8 +619,22 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 256
+  sounds:
+  - {fileID: 8300000, guid: f9dc7a8557be87e4aa1ebce44c027f13, type: 3}
   vida: 20
   life: {fileID: 0}
+--- !u!114 &114992414379981854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828266647462550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662121d9b74dc594a979af59ad157928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 2
 --- !u!212 &212375804333717462
 SpriteRenderer:
   m_ObjectHideFlags: 1
