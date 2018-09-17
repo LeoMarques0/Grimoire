@@ -7,6 +7,7 @@ public class Batty : MonoBehaviour {
     GameObject player;
     SpriteRenderer sr;
     int life = 2;
+    bool hit = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +19,13 @@ public class Batty : MonoBehaviour {
 	void Update () {
         if (life <= 0)
             Destroy(gameObject, 0.3f);
-        if (sr.isVisible)
+        if (sr.isVisible && !hit)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position + Vector3.up * 0.3f, 2 * Time.deltaTime);
         }
-	}
+        else if (hit)
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + 10, transform.position.y + 10), 4 * Time.deltaTime);
+    }
 
     private IEnumerator OnTriggerEnter2D(Collider2D col)
     {
@@ -36,6 +39,12 @@ public class Batty : MonoBehaviour {
                 sr.color = Color.white;
                 yield return new WaitForSeconds(0.05f);
             }
+        }
+        if(col.tag == "Player")
+        {
+            hit = true;
+            yield return new WaitForSeconds(0.2f);
+            hit = false;
         }
         yield return null;
     }

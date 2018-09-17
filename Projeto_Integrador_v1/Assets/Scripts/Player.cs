@@ -41,18 +41,17 @@ public class Player : MonoBehaviour {
         }
         else
         {
-            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
                 IsRunning();
             }
             else
                 anima.SetFloat("hor", 0);
 
-            if (Input.GetKeyDown(KeyCode.Z) && Fireball.fireballAmount < 3)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && Fireball.fireballAmount < 3)
                 IsFireball();
-            else if (Input.GetKeyDown(KeyCode.X))
+            else if (Input.GetKeyDown(KeyCode.Mouse1))
             {
-                audiosource.clip = sounds[0];
                 if (anima.GetFloat("hor") != 0 && isGrounded == true)
                 {
                     thunderSword.SetActive(true);
@@ -66,7 +65,7 @@ public class Player : MonoBehaviour {
                 if (anima.GetBool("isLightning"))
                     audiosource.Play();
             }
-            else if ((Input.GetKeyDown(KeyCode.C) && isGrounded == true) || isGrounded == false)
+            else if ((Input.GetKeyDown(KeyCode.Space) && isGrounded == true) || isGrounded == false)
                 IsJumping();
                 
         }
@@ -77,9 +76,9 @@ public class Player : MonoBehaviour {
         if ((col.tag == "EvilAttack" || col.tag == "Boss" || col.tag == "Enemy")  && isDamaged == false)
         {
             rbPlayer.velocity = new Vector2(0, 0);
-            if (anima.GetFloat("hor") > 0)
+            if (transform.localScale.x == 2)
                 rbPlayer.velocity = -transform.right * 2;
-            else if (anima.GetFloat("hor") < 0)
+            else if (transform.localScale.x == -2)
                 rbPlayer.velocity = transform.right * 2;
             anima.Play("Damage");
             isDamaged = true;
@@ -103,14 +102,14 @@ public class Player : MonoBehaviour {
         }
         else
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D))
             {
                 transform.Translate(transform.right * spd * Time.deltaTime);
                 transform.localScale = new Vector3(2, 2, 2);
                 anima.SetFloat("hor", 1);
             }
 
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.A))
             {
                 transform.Translate(transform.right * spd * -1 * Time.deltaTime);
                 transform.localScale = new Vector3(-2, 2, 2);
