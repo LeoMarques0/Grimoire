@@ -52,6 +52,8 @@ public class Player : MonoBehaviour {
                 IsFireball();
             else if (Input.GetKeyDown(KeyCode.Mouse1))
             {
+                audiosource.clip = sounds[0];
+                audiosource.Play();
                 if (anima.GetFloat("hor") != 0 && isGrounded == true)
                 {
                     thunderSword.SetActive(true);

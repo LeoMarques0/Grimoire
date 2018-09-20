@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50580093849046264}
   - component: {fileID: 114080637468201262}
   - component: {fileID: 60728798860590152}
+  - component: {fileID: 60082750781224352}
   m_Layer: 10
   m_Name: Mask
   m_TagString: Enemy
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533964293552370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.94932, y: -4.1410747, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,6 +65,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!60 &60082750781224352
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533964293552370}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.47, y: 0.67}
+    newSize: {x: 0.47, y: 0.67}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.004667282, y: 0.6659336}
+      - {x: -0.07653427, y: 0.6700001}
+      - {x: -0.1374073, y: 0.500664}
+      - {x: -0.2226448, y: 0.39737725}
+      - {x: -0.21545792, y: 0.2656312}
+      - {x: -0.12505722, y: 0.1748178}
+      - {x: -0.15367126, y: 0.077261925}
+      - {x: 0.19246864, y: 0.06912851}
+      - {x: 0.19433784, y: 0.11572695}
+      - {x: 0.19840431, y: 0.26286316}
+      - {x: 0.058279037, y: 0.49112082}
 --- !u!60 &60728798860590152
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -128,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3297a3b0b05c44747810214377118cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireball: {fileID: 1214036896545756, guid: e1327c5a78ec1944798d5ee24368b8f1, type: 2}
+  fireball: {fileID: 1960024227958180, guid: 8ea1d8af0882c3844a8980794f824085, type: 2}
   mask:
     serializedVersion: 2
     m_Bits: 512

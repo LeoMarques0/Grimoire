@@ -13,14 +13,12 @@ public class DarkFollower : MonoBehaviour {
     bool range = false, isAttack = false;
     public LayerMask mask;
     Animator anima;
-    Rigidbody2D rb;
     SpriteRenderer sr;
 
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Mage");
         sr = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
 	}
 	
@@ -28,7 +26,7 @@ public class DarkFollower : MonoBehaviour {
 	void Update () {
 
         if (life <= 0)
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject);
         //Area na qual ele ira detectar o personagem.
         if (transform.localScale.x == 1)
         {
@@ -114,12 +112,15 @@ public class DarkFollower : MonoBehaviour {
         if (col.tag == "Attack")
         {
             life -= col.GetComponent<AttackAtribute>().GetDamage();
-            for (int i = 0; i < 3; i++)
+            if (life > 0)
             {
-                sr.color = Color.red;
-                yield return new WaitForSeconds(0.05f);
-                sr.color = Color.white;
-                yield return new WaitForSeconds(0.05f);
+                for (int i = 0; i < 3; i++)
+                {
+                    sr.color = Color.red;
+                    yield return new WaitForSeconds(0.05f);
+                    sr.color = Color.white;
+                    yield return new WaitForSeconds(0.05f);
+                }
             }
         }
         yield return null;
