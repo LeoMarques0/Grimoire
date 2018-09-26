@@ -8,20 +8,22 @@ public class Player : MonoBehaviour {
     public Rigidbody2D rbPlayer;
     public Animator anima;
     public GameObject thunderSword;
-    Animator lightningSword;
     public float spd, minHeight, maxHeight, initialHeight;
     public GameObject dust;
     public GameObject fireball;
     public LayerMask mask;
     public AudioClip[] sounds;
-    public int vida = 20;
+    public RectTransform life;
+
+    Animator lightningSword;
     bool isGrounded = true, isDamaged = false;
     AudioSource audiosource;
-    public Image life;
+    GameManager gm;
 
 
 	// Use this for initialization
 	void Start () {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         anima = GetComponent<Animator>();
         audiosource = GetComponent<AudioSource>();
         lightningSword = thunderSword.GetComponent<Animator>();
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
         rbPlayer.gravityScale = 1;
         isGrounded = Physics2D.OverlapBox(transform.position, new Vector2(0.2f, 0.02f), 0, mask);
         anima.SetBool("isGrounded", isGrounded);
@@ -77,6 +80,8 @@ public class Player : MonoBehaviour {
     {
         if ((col.tag == "EvilAttack" || col.tag == "Boss" || col.tag == "Enemy")  && isDamaged == false)
         {
+            gm.vida -= col.GetComponent<AttackAtribute>().GetDamage();
+            life.sizeDelta = new Vector2(life.sizeDelta.x - 10 * col.GetComponent<AttackAtribute>().GetDamage(), life.sizeDelta.y);
             rbPlayer.velocity = new Vector2(0, 0);
             if (transform.localScale.x == 2)
                 rbPlayer.velocity = -transform.right * 2;

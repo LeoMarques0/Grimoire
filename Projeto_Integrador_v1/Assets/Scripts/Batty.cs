@@ -7,7 +7,7 @@ public class Batty : MonoBehaviour {
     GameObject player;
     SpriteRenderer sr;
     AudioSource aS;
-    int life = 2;
+    int life = 6;
     bool hit = false;
 
 	// Use this for initialization
@@ -40,11 +40,14 @@ public class Batty : MonoBehaviour {
             life -= col.GetComponent<AttackAtribute>().GetDamage();
             if(life > 0)
             {
+                for (int i = 0; i < 3; i++)
+                {
                     sr.color = Color.red;
                     yield return new WaitForSeconds(0.05f);
                     sr.color = Color.white;
                     yield return new WaitForSeconds(0.05f);
                 }
+            }
         }
         if(col.tag == "Player")
         {

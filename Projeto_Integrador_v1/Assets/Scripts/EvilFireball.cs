@@ -6,10 +6,12 @@ public class EvilFireball : MonoBehaviour {
 
     Rigidbody2D rb;
     SpriteRenderer sr;
+    GameManager gm;
 
     // Use this for initialization
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * 12;
@@ -30,7 +32,5 @@ public class EvilFireball : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        if (col.tag == "Player")
-            GameObject.Find("Mage").GetComponent<Player>().vida -= 2;
     }
 }
