@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Grimoire.unity
+- path: Assets/Scenes/FinalBoss.unity
   isLoaded: 1
   isActive: 1

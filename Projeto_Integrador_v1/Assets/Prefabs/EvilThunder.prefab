@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50070418945117598}
   - component: {fileID: 114110505857629310}
   - component: {fileID: 61419403213896826}
+  - component: {fileID: 114239718399812540}
   - component: {fileID: 95169494747584272}
   m_Layer: 0
   m_Name: EvilThunder
@@ -118,6 +119,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f70ec241125264992540f5bea48004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114239718399812540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106978188571338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662121d9b74dc594a979af59ad157928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 4
 --- !u!212 &212548999955010196
 SpriteRenderer:
   m_ObjectHideFlags: 1

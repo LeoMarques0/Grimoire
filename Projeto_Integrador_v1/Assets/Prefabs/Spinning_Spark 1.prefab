@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95968182823436724}
   - component: {fileID: 58069873217025348}
   - component: {fileID: 114132591176569624}
+  - component: {fileID: 114903013239895842}
   m_Layer: 0
   m_Name: Spinning_Spark 1
   m_TagString: EvilAttack
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 4932338845132190}
   - component: {fileID: 61992159252290152}
   - component: {fileID: 61560925270965012}
+  - component: {fileID: 114902271218328964}
   m_Layer: 0
   m_Name: Hitboxes
   m_TagString: EvilAttack
@@ -112,7 +114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7, y: 0.3}
+  m_Size: {x: 12.5, y: 0.3}
   m_EdgeRadius: 0
 --- !u!61 &61992159252290152
 BoxCollider2D:
@@ -137,7 +139,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 7}
+  m_Size: {x: 0.3, y: 12.5}
   m_EdgeRadius: 0
 --- !u!95 &95968182823436724
 Animator:
@@ -168,6 +170,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02630759c4385b4499d39615a9e8c60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114902271218328964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875804676051422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662121d9b74dc594a979af59ad157928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 3
+--- !u!114 &114903013239895842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116523206484534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662121d9b74dc594a979af59ad157928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 3
 --- !u!212 &212760043852680150
 SpriteRenderer:
   m_ObjectHideFlags: 1

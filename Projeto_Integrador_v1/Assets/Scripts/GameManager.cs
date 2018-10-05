@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public static GameManager singleton = null;
-    public int vida = 20;
+    public int vida = 10;
 	// Use this for initialization
 	void Start () {
         if (singleton == null)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -16,14 +17,16 @@ public class Player : MonoBehaviour {
     public RectTransform life;
 
     Animator lightningSword;
-    bool isGrounded = true, isDamaged = false;
+    bool isGrounded = true, isDamaged = false, isDead = false;
     AudioSource audiosource;
     GameManager gm;
+    BoxCollider2D bc;
 
 
 	// Use this for initialization
 	void Start () {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        bc = GetComponent<BoxCollider2D>();
         anima = GetComponent<Animator>();
         audiosource = GetComponent<AudioSource>();
         lightningSword = thunderSword.GetComponent<Animator>();
@@ -37,7 +40,11 @@ public class Player : MonoBehaviour {
         anima.SetBool("isGrounded", isGrounded);
 
         //Verifica se o personagem está recebendo dano
-        if (isDamaged)
+        if(gm.vida <= 0 && !isDead)
+        {
+            StartCoroutine("IsDead");
+        }
+        else if (isDamaged || isDead)
         {
             anima.SetFloat("hor", 0);
             anima.SetFloat("ver", 0);
@@ -51,12 +58,12 @@ public class Player : MonoBehaviour {
             else
                 anima.SetFloat("hor", 0);
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Fireball.fireballAmount < 3)
+            if (Input.GetKeyDown(KeyCode.J) && Fireball.fireballAmount < 3)
                 IsFireball();
-            else if (Input.GetKeyDown(KeyCode.Mouse1))
+            else if (Input.GetKeyDown(KeyCode.K))
             {
-                audiosource.clip = sounds[0];
-                audiosource.Play();
+                if(audiosource.clip != sounds[0])
+                    audiosource.clip = sounds[0];
                 if (anima.GetFloat("hor") != 0 && isGrounded == true)
                 {
                     thunderSword.SetActive(true);
@@ -81,7 +88,7 @@ public class Player : MonoBehaviour {
         if ((col.tag == "EvilAttack" || col.tag == "Boss" || col.tag == "Enemy")  && isDamaged == false)
         {
             gm.vida -= col.GetComponent<AttackAtribute>().GetDamage();
-            life.sizeDelta = new Vector2(life.sizeDelta.x - 10 * col.GetComponent<AttackAtribute>().GetDamage(), life.sizeDelta.y);
+            life.sizeDelta = new Vector2(life.sizeDelta.x - 20 * col.GetComponent<AttackAtribute>().GetDamage(), life.sizeDelta.y);
             rbPlayer.velocity = new Vector2(0, 0);
             if (transform.localScale.x == 2)
                 rbPlayer.velocity = -transform.right * 2;
@@ -174,6 +181,16 @@ public class Player : MonoBehaviour {
         anima.SetBool("isLightning", false);
         thunderSword.SetActive(false);
         yield return null;
+    }
+
+    private IEnumerator IsDead()
+    {
+        anima.Play("Death");
+        bc.enabled = false;
+        rbPlayer.AddForce(transform.localScale * new Vector2(-5000, 10000) * Time.deltaTime);
+        isDead = true;
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("GameOver");
     }
 
     public void StopLightning()

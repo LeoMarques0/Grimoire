@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50797620622838586}
   - component: {fileID: 58043004990522792}
   - component: {fileID: 114018868705714996}
+  - component: {fileID: 114272612829176052}
   m_Layer: 0
   m_Name: Darkball
   m_TagString: EvilAttack
@@ -108,6 +109,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6458587d620a1e46813b5f7e3613f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114272612829176052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214036896545756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662121d9b74dc594a979af59ad157928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
 --- !u!212 &212753301423188822
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,6 +8,8 @@ public class Boss : MonoBehaviour {
     public GameObject evilFireball;
     public GameObject evilThunder;
     public GameObject evilSpark;
+    int attack = 0;
+    bool isAttacking = false;
 
 
     GameObject evilMage;
@@ -16,7 +18,7 @@ public class Boss : MonoBehaviour {
     Animator teleport;
     BoxCollider2D evilBox;
     Vector3 evilBoxSize, rightSide = new Vector3(6.5f, -2.75f), leftSide = new Vector3(-6.5f, -2.75f);
-    int life = 3, rnd = 1, side = 0;
+    int life = 50, rnd = 1, side = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -27,22 +29,30 @@ public class Boss : MonoBehaviour {
         evilImage = evilMage.GetComponent<SpriteRenderer>();
         animaBoss = evilMage.GetComponent<Animator>();
         evilBoxSize = evilBox.size;
-	}
+        attack = Random.Range(1, 4);
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (evilImage.sortingOrder == -5)
             evilBox.size = new Vector3(0, 0, 0);
-        if (Input.GetKeyDown(KeyCode.J))
+        if(life <= 0)
         {
+            Destroy(gameObject);
+        }
+        else if (attack == 1 && !isAttacking)
+        {
+            isAttacking = true;
             StartCoroutine("Attack1");
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        else if (attack == 2 && !isAttacking)
         {
+            isAttacking = true;
             StartCoroutine("Attack2");
         }
-        if (Input.GetKeyDown(KeyCode.L))
+        else if (attack == 3 && !isAttacking)
         {
+            isAttacking = true;
             StartCoroutine("Attack3");
         }
     }
@@ -83,7 +93,7 @@ public class Boss : MonoBehaviour {
         Instantiate(evilFireball, new Vector2(transform.position.x + 0.5f, -3.6f), Quaternion.Euler(Vector3.up * side));
         yield return new WaitForSeconds(0.35f);
         Instantiate(evilFireball, new Vector2(transform.position.x + 0.5f, -2.1f), Quaternion.Euler(Vector3.up * side));
-        if(life <= 2)
+        if(life > 15 && life <= 30)
         {
             yield return new WaitForSeconds(0.35f);
             Instantiate(evilFireball, new Vector2(transform.position.x + 0.5f, -3.6f), Quaternion.Euler(Vector3.up * side));
@@ -92,7 +102,7 @@ public class Boss : MonoBehaviour {
             Instantiate(evilFireball, new Vector2(transform.position.x + 0.5f, -2.6f), Quaternion.Euler(Vector3.up * side));
             Instantiate(evilFireball, new Vector2(transform.position.x + 0.5f, -2.1f), Quaternion.Euler(Vector3.up * side));
         }
-        if (life == 1)
+        if (life <= 15)
         {
             yield return new WaitForSeconds(0.35f);
             Instantiate(evilFireball, new Vector2(transform.position.x + 0.5f, -2.6f), Quaternion.Euler(Vector3.up * side));
@@ -101,8 +111,11 @@ public class Boss : MonoBehaviour {
             Instantiate(evilFireball, new Vector2(transform.position.x + 0.5f, -3.1f), Quaternion.Euler(Vector3.up * side));
             Instantiate(evilFireball, new Vector2(transform.position.x + 0.5f, -3.6f), Quaternion.Euler(Vector3.up * side));
         }
+        yield return new WaitForSeconds(1f);
+        while(attack == 1)
+            attack = Random.Range(1, 4);
         animaBoss.Play("Boss_idleside");
-
+        isAttacking = false;
         yield return null;
     }
 
@@ -115,13 +128,13 @@ public class Boss : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         if (rnd == 1)
         {
-            transform.position = rightSide;
+            transform.position = new Vector3(6.5f, -1.75f);
             transform.localScale = new Vector3(2, 2, 2);
             side = 180;
         }
         else
         {
-            transform.position = leftSide;
+            transform.position = new Vector3(-6.5f, -1.75f);
             transform.localScale = new Vector3(-2, 2, 2);
             side = 0;
         }
@@ -138,13 +151,17 @@ public class Boss : MonoBehaviour {
         {
             animaBoss.Play("Boss_attack_1");
             yield return new WaitForSeconds(0.2f);
-            Instantiate(evilThunder, new Vector2(transform.position.x -1f, -3.1f), Quaternion.identity);
+            Instantiate(evilThunder, new Vector2(transform.position.x -1f, -2.1f), Quaternion.identity);
             yield return new WaitForSeconds(0.2f);
             animaBoss.Play("Boss_idleside");
             yield return new WaitForSeconds(2f);
 
 
         }
+        yield return new WaitForSeconds(1f);
+        while (attack == 2)
+            attack = Random.Range(1, 4);
+        isAttacking = false;
         yield return null;
     }
 
@@ -164,6 +181,10 @@ public class Boss : MonoBehaviour {
         Instantiate(evilSpark, new Vector3(0, 0.15f), Quaternion.identity, transform);
         yield return new WaitForSeconds(6.5f);
         animaBoss.Play("Boss_idle");
+        yield return new WaitForSeconds(1f);
+        while (attack == 3)
+            attack = Random.Range(1, 4);
+        isAttacking = false;
         yield return null;
     }
 
